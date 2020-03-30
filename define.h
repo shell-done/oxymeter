@@ -33,4 +33,4 @@ typedef struct{
 		int pouls;  /*!< Pouls */
 	} oxy;
 
-#endif // DEFINE_H
+#endif /* DEFINE_H */

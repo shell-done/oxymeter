@@ -8,8 +8,8 @@
 /** 
  * Fonctions
  */
-FILE* initFichier(char* nomFichier );
+FILE* initFichier(char* nomFichier);
 absorp lireFichier(FILE* pf, int* etat);
 void finFichier(FILE* pf);
 
-#endif // FICHIERS_H
+#endif /* FICHIERS_H */

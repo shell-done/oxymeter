@@ -8,4 +8,4 @@
  */
 void integrationTest(char* filename);
 
-#endif // INTEGRATION_H
+#endif /* INTEGRATION_H */

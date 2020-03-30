@@ -8,4 +8,4 @@
  */
 oxy mesureTest(char* filename);
 
-#endif // MESURE_H
+#endif /* MESURE_H */

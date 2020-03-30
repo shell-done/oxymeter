@@ -8,4 +8,4 @@
  */
 void affichage(oxy myOxy);
 
-#endif // AFFICHAGE_H
+#endif /* AFFICHAGE_H */
