@@ -6,7 +6,7 @@ BUILD_DIR = ./build
 SRC= $(shell find $(SRC_DIR) -name '*.c')
 OBJ= $(SRC:%=$(BUILD_DIR)/%.o)
 LDFLAGS=-lm
-CFLAGS=-Wall -Wextra -g
+CFLAGS=-Wall -Wextra -std=c89 -g
 
 all: $(EXEC)
 
