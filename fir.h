@@ -2,10 +2,21 @@
 #define FIR_H
 
 #include "define.h"
+#include "fichiers.h"
+
+typedef struct s_FirParams {
+    int acrSamples[51];
+    int acirSamples[51];
+    int currentIdx;
+} s_FirParams;
 
 /** 
  * Fonctions 
  */
+s_FirParams* initFir();
+void pushNewValue(s_FirParams* params, absorp* myAbsorb);
+void fir(s_FirParams* params, absorp* myAbsorb);
+void closeFir(s_FirParams* params);
 absorp firTest(char* filename);
 
-#endif // FIR_H
+#endif /* FIR_H */
