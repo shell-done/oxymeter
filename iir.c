@@ -7,6 +7,8 @@ s_IIRParameters* initIIR() {
 	parameters->lastacrY = 0;
 	parameters->lastacirX = 0;
 	parameters->lastacirY = 0;
+
+	return parameters;
 }
 
 void iir(s_IIRParameters* parameters, absorp* myAbsorp) {
@@ -37,7 +39,7 @@ void iir(s_IIRParameters* parameters, absorp* myAbsorp) {
 
 absorp iirTest(char* filename) {
 	int etat=0;
-	absorp	myAbsorp;
+	absorp myAbsorp;
 
 	s_IIRParameters* parameters = initIIR();
 	FILE* file = initFichier(filename);

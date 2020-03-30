@@ -21,4 +21,4 @@ void iir(s_IIRParameters* parameters, absorp* myAbsorp);
 absorp iirTest(char* filename);
 void endIIR(s_IIRParameters* parameters);
 
-#endif // IIR_H
+#endif /* IIR_H */

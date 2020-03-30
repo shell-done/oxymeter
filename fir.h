@@ -5,8 +5,8 @@
 #include "fichiers.h"
 
 typedef struct s_FirParams {
-    int acrSamples[51];
-    int acirSamples[51];
+    float acrSamples[51];
+    float acirSamples[51];
     int currentIdx;
 } s_FirParams;
 
