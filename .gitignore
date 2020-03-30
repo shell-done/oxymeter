@@ -1,5 +1,9 @@
 build/
 .vscode/
+Images/
 
 *.o
 Projet
+Data.txt
+.verrouData
+interfaceOxymetre.jar
