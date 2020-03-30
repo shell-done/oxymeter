@@ -1,7 +1,9 @@
 #include "mesure.h"
 
 oxy mesureTest(char* filename){
-	oxy myOxy;
-	return myOxy;
+	(void)filename;
 
+	oxy myOxy;
+	myOxy.pouls = 0;
+	return myOxy;
 }
