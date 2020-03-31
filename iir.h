@@ -34,9 +34,9 @@ typedef struct s_IirParams {
  * \fn s_IirParams* initIir()
  * \brief Initialise les paramètres utilisée par les fonctions IIR
  * 
- * Initialise les variables à 0
- * 
  * \return Un pointeur sur une sructure s_IirParams allouée dynamiquement
+ * 
+ * Initialise les variables à 0
  */
 s_IirParams* initIir();
 

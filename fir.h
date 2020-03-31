@@ -30,9 +30,9 @@ typedef struct s_FirParams {
  * \fn s_FirParams* initFir()
  * \brief Initialise les paramètres utilisée par les fonctions FIR
  * 
- * Initialise les tableaux à 0 et l'index courant à 0
- * 
  * \return Un pointeur sur une sructure s_FirParams allouée dynamiquement
+ * 
+ * Initialise les tableaux à 0 et l'index courant à 0
  */
 s_FirParams* initFir();
 
