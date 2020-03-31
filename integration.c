@@ -28,13 +28,11 @@ void integrationTest(char* filename) {
             /* Vérifie l'avancement dans la période */
             redoMesure = checkPicPosition(paramsMesure, &myAbsorp);
 
-            /* Si une période vient de se finir, on recalcul le poul et le Spo2 */
+            /* Si une période vient de se finir, on recalcul le poul et le Spo2 et on l'affiche*/
 			if(redoMesure) {
 				myOxy = mesure(paramsMesure, &myAbsorp);
+                affichage(myOxy);
 			}
-
-            /* Ecriture des données calculées dans le fichier data.txt */
-            affichage(myOxy);
         }
     } while (etat != EOF);
 
