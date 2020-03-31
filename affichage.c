@@ -52,6 +52,6 @@ void affichage(oxy myOxy) {
 		deleteLock();
 	} else {
 		/* Sinon on affiche un message d'attente */
-		printf("Attente...");
+		printf("Attente...\n");
 	}
 }
