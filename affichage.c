@@ -30,7 +30,6 @@ void writeData(oxy* myOxy) {
 	fprintf(data, "%d\n%d", myOxy->spo2, myOxy->pouls);
 
 	fclose(data);
-	printf("aa\n");
 }
 
 void affichage(oxy myOxy) {

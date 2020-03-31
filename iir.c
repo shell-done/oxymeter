@@ -53,13 +53,13 @@ absorp iirTest(char* filename) {
 		}
 	}
 
-	endIIR(parameters);
+	closeIIR(parameters);
 	finFichier(file);
 	
 	return myAbsorp;
 }
 
 
-void endIIR(s_IIRParameters* parameters) {
+void closeIIR(s_IIRParameters* parameters) {
 	free(parameters);
 }

@@ -22,10 +22,10 @@ typedef struct s_MesureParams {
 float maxMesure(float a, float b);
 float minMesure(float a, float b);
 s_MesureParams* initMesure();
-int mesure(s_MesureParams* params, absorp* absorp);
+int checkPicPosition(s_MesureParams* params, absorp* absorp);
 int calculatePoul(s_MesureParams* params);
 int calculateSpO2(s_MesureParams* params, absorp* myAbsorp);
-oxy calculate(s_MesureParams* params, absorp* myAbsorp);
+oxy mesure(s_MesureParams* params, absorp* myAbsorp);
 void closeMesure(s_MesureParams* params);
 oxy mesureTest(char* filename);
 

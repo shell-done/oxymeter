@@ -29,7 +29,7 @@ s_MesureParams* initMesure() {
 	return params;
 }
 
-int mesure(s_MesureParams* params, absorp* absorp) {
+int checkPicPosition(s_MesureParams* params, absorp* absorp) {
 	int doCalculation = 0;
 
 	if(params->etat == PIC_HAUT) {
@@ -73,7 +73,7 @@ int calculateSpO2(s_MesureParams* params, absorp* myAbsorp) {
 	}
 }
 
-oxy calculate(s_MesureParams* params, absorp* myAbsorp) {
+oxy mesure(s_MesureParams* params, absorp* myAbsorp) {
 	oxy myOxy;
 
 	myOxy.spo2 = calculateSpO2(params, myAbsorp);
@@ -94,7 +94,7 @@ void closeMesure(s_MesureParams* params) {
 
 oxy mesureTest(char* filename){
 	int etat = 0;
-	int doCalculation = 0;
+	int redoMesure = 0;
 	absorp myAbsorp;
 	oxy myOxy;
 
@@ -105,10 +105,10 @@ oxy mesureTest(char* filename){
 		myAbsorp = lireFichier(file, &etat);
 
 		if (etat != EOF) {
-			doCalculation = mesure(params, &myAbsorp);
+			redoMesure = checkPicPosition(params, &myAbsorp);
 
-			if(doCalculation) {
-				myOxy = calculate(params, &myAbsorp);
+			if(redoMesure) {
+				myOxy = mesure(params, &myAbsorp);
 			}
 		}
 	}
