@@ -17,7 +17,7 @@ $(BUILD_DIR)/%.c.o: %.c
 	$(MKDIR_P) $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY: clean
+.PHONY: clean rebuild
 
 clean:
 	@rm -rf $(BUILD_DIR)
