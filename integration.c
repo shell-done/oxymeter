@@ -8,7 +8,7 @@ void integrationTest(char* filename) {
     oxy myOxy;
     
     s_FirParams* paramsFir = initFir();
-    s_IIRParameters* paramsIir = initIIR();
+    s_IirParams* paramsIir = initIir();
     s_MesureParams* paramsMesure = initMesure();
     
     FILE* file = initFichier(filename);

@@ -1,7 +1,7 @@
 #include "iir.h"
 
-s_IIRParameters* initIIR() {
-	s_IIRParameters* parameters = malloc(sizeof(s_IIRParameters));
+s_IirParams* initIir() {
+	s_IirParams* parameters = malloc(sizeof(s_IirParams));
 
 	parameters->lastacrX = 0;
 	parameters->lastacrY = 0;
@@ -11,7 +11,7 @@ s_IIRParameters* initIIR() {
 	return parameters;
 }
 
-void iir(s_IIRParameters* parameters, absorp* myAbsorp) {
+void iir(s_IirParams* parameters, absorp* myAbsorp) {
 	/* Valeurs actuelles */
 	float currentacrY;
 	float currentacrX;
@@ -41,7 +41,7 @@ absorp iirTest(char* filename) {
 	int etat=0;
 	absorp myAbsorp;
 
-	s_IIRParameters* parameters = initIIR();
+	s_IirParams* parameters = initIir();
 	FILE* file = initFichier(filename);
 
 	while(etat != EOF) {
@@ -60,6 +60,6 @@ absorp iirTest(char* filename) {
 }
 
 
-void closeIIR(s_IIRParameters* parameters) {
+void closeIIR(s_IirParams* parameters) {
 	free(parameters);
 }
