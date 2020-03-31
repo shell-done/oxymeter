@@ -6,7 +6,9 @@ absorp lecture(FILE* file_pf, int* file_state){
 
 	/* Attribue -1 à acr, dcr, acir et dcir afin de vérifier s'il y a bien 4 valeurs dans la ligne lue */
 	int acr=-1, dcr=-1, acir=-1, dcir=-1;
-	int isCorrupted = 0; /* Vaut 0 si la ligne n'est pas corrompue, 1 sinon*/
+	int redSignalCorrupted = 0; /* Vaut 0 si acr et dcr ne sont pas corrompus, 1 sinon*/
+	int iredSignalCorrupted = 0; /* Vaut 0 si acir et dcir ne sont pas corrompus, 1 sinon*/
+	int isCorrupted = 0; /* Vaut 0 si acr, dcr, acir et dcir ne sont pas corrompus, 1 sinon*/
 
 	do {
 		/* Lit une ligne du fichier en récupérant les 4 valeurs, séparés par des virgules et se finissant par LFCR */
@@ -14,7 +16,11 @@ absorp lecture(FILE* file_pf, int* file_state){
 
 		/* Vérifie que les 4 valeurs acr, dcr, acir et dcir ont bien été lue */
 		/* Si ce n'est pas le cas, isCorrupted = 1 */
-		isCorrupted = (acr == -1 || dcr == -1 || acir == -1 || dcir == -1);
+		redSignalCorrupted = (acr == -1 || dcr == -1);
+		iredSignalCorrupted = (acir == -1 || dcir == -1);
+
+		/* Permet d'éviter trop de booleen a suivre */
+		isCorrupted = (redSignalCorrupted || iredSignalCorrupted);
 
 		/* Si on est pas après la dernière ligne */
 		if(*file_state != EOF) {
