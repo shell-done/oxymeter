@@ -67,7 +67,8 @@ absorp firTest(char* filename) {
 	FILE* file = initFichier(filename); /* Fichier contenant les valeurs à filtrer */
 	
 	while (etat != EOF) {
-		absorp tmpAbsorp = lireFichier(file, &etat); /* On récupère les données */
+		/* On récupère les données */
+		absorp tmpAbsorp = lireFichier(file, &etat);
 
 		/* Si on est pas en fin de fichier (EOF) */
 		if (etat != EOF) {
