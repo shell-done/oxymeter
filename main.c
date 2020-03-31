@@ -5,6 +5,7 @@
 #include "iir.h"
 #include "mesure.h"
 #include "affichage.h"
+#include "integration.h"
 
 int main() {
     int etat = 0; /* Etat du fichier (vaut EOF si en fin de fichier) */
@@ -17,6 +18,7 @@ int main() {
     s_FirParams* paramsFir = initFir();
     s_IirParams* paramsIir = initIir();
     s_MesureParams* paramsMesure = initMesure();
+    s_lastOxyParams* paramsLastOxy = initLastOxy();
 
     printf("### Début du programme ###\n");
     printf("--------------------------\n");
@@ -43,6 +45,14 @@ int main() {
             /* Si une période vient de se finir, on recalcul le poul et le Spo2 et on l'affiche*/
 			if(redoMesure) {
 				myOxy = mesure(paramsMesure, &myAbsorp);
+
+                /* Ajoute le dernier oxy à la liste */
+                pushLastOxy(paramsLastOxy, &myOxy);
+
+                /* Calcul la moyenne des 10 derniers oxy */
+                myOxy = lastOxyAverage(paramsLastOxy);
+                
+                /* Affiche cette moyenne */
                 affichage(myOxy);
 			}
         }
@@ -57,6 +67,7 @@ int main() {
     finFichier(file);
     
     /* Désallocation des paramètres utilisés pour les fonctions */
+    closeLastOxy(paramsLastOxy);
     closeMesure(paramsMesure);
     closeFir(paramsFir);
     closeIIR(paramsIir);
