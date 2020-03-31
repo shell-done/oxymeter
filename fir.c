@@ -75,7 +75,7 @@ absorp firTest(char* filename) {
 			myAbsorp = tmpAbsorp;
 			fir(params, &myAbsorp);
 		}
-	};
+	}
 	
 	/* Désallocation et fermeture */
 	closeFir(params);
